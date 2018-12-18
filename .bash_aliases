@@ -4,4 +4,7 @@ fyi() {
     curl cli.fyi/$1	 
 }
 
+weather() {
+    curl wttr.in/$1	 
+}
 

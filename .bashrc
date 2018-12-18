@@ -126,3 +126,9 @@ export PS1
 source ~/oc_completion.sh
 export DOCKER_HOST=tcp://0.0.0.0:2375
 export GIT_EDITOR=vim
+
+export PROMPT_COMMAND='history -a'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/wat58794/.sdkman"
+[[ -s "/home/wat58794/.sdkman/bin/sdkman-init.sh" ]] && source "/home/wat58794/.sdkman/bin/sdkman-init.sh"
