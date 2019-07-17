@@ -8,3 +8,7 @@ weather() {
     curl wttr.in/$1	 
 }
 
+decodeDeviceBytes() { 
+    echo $1 | base64 --decode | od -t x8 -An
+}
+

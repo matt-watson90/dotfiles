@@ -39,3 +39,8 @@ set shiftwidth=4
 " " On pressing tab, insert 4 spaces
 set expandtab
 
+" turn hybrid line numbers on
+set number relativenumber
+set nu rnu
+
+
