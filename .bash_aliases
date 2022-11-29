@@ -1,14 +1,6 @@
-alias hosts='vi /mnt/c/Windows/System32/drivers/etc/hosts'
-alias fucking=sudo
-fyi() {
-    curl cli.fyi/$1	 
-}
+alias gs="git status"
 
-weather() {
-    curl wttr.in/$1	 
-}
+alias flake9="flake8"
+alias flake7="flake8"
 
-decodeDeviceBytes() { 
-    echo $1 | base64 --decode | od -t x8 -An
-}
-
+alias copy-wheel="cd ~/projects/tdl/technology-data-load/swagger-generated-source/client/target/generated-sources/swagger/ && python3 setup.py bdist_wheel && cd ~/projects/tdl/technology-data-load/tdl-web-ui/ && pip uninstall tdl-client && pip install ../swagger-generated-source/client/target/generated-sources/swagger/dist/tdl_client-1.2.local.SNAPSHOT-py3-none-any.whl"
