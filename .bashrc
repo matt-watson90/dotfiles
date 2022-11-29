@@ -125,17 +125,31 @@ parse_git_branch() {
          git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      }
 
-export PS1="\[$(tput sgr0)\]\[\033[38;5;251m\][\[$(tput sgr0)\]\[\033[38;5;151m\]\[$(tput sgr0)\]\[\033[38;5;39m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\h:\[$(tput sgr0)\]\[\033[38;5;13m\]\W\[$(tput sgr0)\]\[\033[38;5;251m\]]\[$(tput sgr0)\]\[\033[38;5;151m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;14m\]\n\[$(tput sgr0)\]\[\033[38;5;14m\]>>\[$(tput sgr0)\]\[\033[38;5;13m\] \[$(tput sgr0)\]"
+export PS1="\[$(tput sgr0)\]\[\033[38;5;251m\][\[$(tput sgr0)\]\[\033[38;5;151m\]\[$(tput sgr0)\]\[\033[38;5;39m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\h:\[$(tput sgr0)\]\[\033[38;5;13m\]\W\[$(tput sgr0)\]\[\033[38;5;251m\]]\[$(tput sgr0)\]\[\033[38;5;151m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;14m\]\n\[$(tput sgr0)\]\[\033[38;5;14m\]🔥 \[$(tput sgr0)\]\[\033[38;5;13m\] \[$(tput sgr0)\]"
 
 
-source ~/oc_completion.sh
-
-export DOCKER_HOST=tcp://0.0.0.0:2375
+#source ~/oc_completion.sh
+source ~/doctl_completion.sh
+source ~/kubectl_completion.sh
 export GIT_EDITOR=vim
 
 export PROMPT_COMMAND='history -a'
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export HISTSIZE=10000
+
+#eval "$(jira --completion-script-bash)"
+
+
+export PATH=~/.local/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# PROXY SETTINGS:
+export http_proxy=http://138.104.152.251:8080
+export https_proxy=http://138.104.152.251:8080
+export no_proxy="ukglasas03.mottmac.group.int localhost host.docker.internal 127.0.0.1"
+
+export DOCKER_HOST="unix:///var/run/docker.sock"
 
 
 
